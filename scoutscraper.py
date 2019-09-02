@@ -5,15 +5,13 @@ import urllib.request
 
 site=input('Please enter a value:')
 
-response = requests.get(foo)
-	
+response = requests.get(site)
+soup = BeautifulSoup(response.text, 'html5lib')
 
 p = soup.findAll("p",{"style" : "margin-top: 5px;"})
 
 for text in p:
     print (text.text)
-	
-
 
 
 
